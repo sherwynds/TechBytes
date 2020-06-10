@@ -4,3 +4,4 @@
 Topics Covered:
 * Python and Data Visualization
 * Python and Data Analysis (Upcoming)
+* Python and Basic Machine Learning (Upcoming)

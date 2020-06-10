@@ -1,4 +1,4 @@
-# TechBytes
+# Tech Bytes Projects
 ⚛ Data science Python projects for the Tech Bytes Foundation
 
 Topics Covered:

@@ -1,6 +1,6 @@
 # Python and Data Visualization
 
-![image](https://github.com/sherwynds/TechBytes/issues/2#issue-639288814)
+![image]()
 
 Instructions: Clone/download this repository to your local machine. Install Anaconda (Python 3), and open the notebooks in Jupyter. Do not alter the directory structure. Click Kernel -> Restart & Run All.
 

@@ -6,7 +6,7 @@ Instructions: Clone/download this repository to your local machine. Install Anac
 
 Roadmap:
 * Python and Data Visualization 1 - Complete
-* Python and Data Visualization 2 - In Progress
-* Python and Data Visualization 3 - Upcoming
-* Python and Data Visualization 4 - Upcoming
+* Python and Data Visualization 2 - Complete
+* Python and Data Visualization 3 - Complete
+* Python and Data Visualization 4 - Complete
 * Python and Data Visualization 5 - Upcoming

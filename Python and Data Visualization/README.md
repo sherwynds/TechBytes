@@ -5,8 +5,8 @@
 Instructions: Clone/download this repository to your local machine. Install Anaconda (Python 3), and open the notebooks in Jupyter. Do not alter the directory structure. Click Kernel -> Restart & Run All.
 
 Roadmap:
-* Python and Data Visualization 1 - Complete
-* Python and Data Visualization 2 - Complete
-* Python and Data Visualization 3 - Complete
-* Python and Data Visualization 4 - Complete
-* Python and Data Visualization 5 - Upcoming
+* Introduction to Bokeh - Complete
+* Bar and Column Charts - Complete
+* Scatter and Line Charts - Complete
+* Interactive Visualizations - Complete
+* Heroku Web App Deployment - Upcoming

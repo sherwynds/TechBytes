@@ -5,8 +5,8 @@
 Instructions: Clone/download this repository to your local machine. Install Anaconda (Python 3), and open the notebooks in Jupyter. Do not alter the directory structure. Click Kernel -> Restart & Run All.
 
 Roadmap:
-* Introduction to Bokeh - Complete
-* Bar and Column Charts - Complete
-* Scatter and Line Charts - Complete
-* Interactive Visualizations - Complete
-* Heroku Web App Deployment - Upcoming
+1. Introduction to Bokeh - Complete
+2. Bar and Column Charts - Complete
+3. Scatter and Line Charts - Complete
+4. Interactive Visualizations - Complete
+5. Heroku Web App Deployment - Upcoming

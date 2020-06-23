@@ -3,5 +3,5 @@
 
 Topics Covered:
 * Python and Data Visualization
-* Python and Data Analysis (Upcoming)
+* Python and Data Analysis (In Progress)
 * Python and Basic Machine Learning (Upcoming)

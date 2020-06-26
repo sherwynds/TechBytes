@@ -9,4 +9,4 @@ Roadmap:
 2. Bar and Column Charts - Complete
 3. Scatter and Line Charts - Complete
 4. Interactive Visualizations - Complete
-5. Heroku Web App Deployment - Upcoming
+5. Heroku Web App Deployment - ![Visit Medium Article](https://medium.com/m2mtechconnect/data-visualization-with-bokeh-flask-and-heroku-e751dc349f6a?source=friends_link&sk=a9f972316beea242589f9cd48efb66c9)

@@ -1,50 +1,63 @@
-# Import the pygame library
+# Get the required library
 import pygame
 
-# Constants for key presses and actions
-from pygame.locals import (
-    K_SPACE,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
-
 # Game constants
-SCREEN_WIDTH = 600
-SCREEN_HEIGHT = 800
+S_WIDTH = 600
+S_HEIGHT = 800
 COLS = 10
 ROWS = 20
-BLOCK_WIDTH = SCREEN_WIDTH/COLS
-BLOCK_HEIGHT = SCREEN_WIDTH/ROWS
-
-class Stack(pygame.sprite.Sprite):
-    def __init__(self, length):
-        super(Stack, self).__init__()
-        self.surf = pygame.Surface((BLOCK_WIDTH,BLOCK_HEIGHT))
-        self.surf.fill((255, 255, 255))
-        self.rect = self.surf.get_rect()
-        
-
+B_WIDTH = S_WIDTH/COLS
+B_HEIGHT = S_HEIGHT/ROWS
+SPEED = 5
 # Initialize pygame
 pygame.init()
 
-# Sets the size of the window
-screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-stack = Stack(10)
+# Set up the screen
+screen = pygame.display.set_mode((S_WIDTH,S_HEIGHT))
+pygame.display.set_caption("Stacks")
 
-# Game loop
-running = True
-while running:
+# Starting stack should be as wide as the screen and as high as a block
+x = 0
+y = S_HEIGHT-B_HEIGHT
+width = S_WIDTH
+height = B_HEIGHT
+speed = SPEED
+directon = 'l'
+prev=[]
+
+loop = True
+while loop:
+    pygame.time.delay(100 )
     for event in pygame.event.get():
-        if event.type == KEYDOWN:
-            if event.key == K_ESCAPE:
-                running = False
-        elif event.type == QUIT:
-            running = False
-
-    # Screen filled with black
-    screen.fill((0, 0, 0))
-
-    screen.blit(stack.surf, (SCREEN_WIDTH/2, SCREEN_HEIGHT/2))
+        if event.type == pygame.QUIT:
+            loop = False
+   
+    # Handle space keypress
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_SPACE]:
+        prev = [x,y,width,height]
+        if y-B_HEIGHT!=B_HEIGHT:
+            y -= B_HEIGHT
+        else:
+            screen.fill((0,0,0))
+            pygame.draw.rect(screen, (255,0,0), (prev[0], S_HEIGHT-B_HEIGHT, prev[2], prev[3]))
+            y = S_HEIGHT - 2*B_HEIGHT
     
-    pygame.display.flip()
+    
+    # Move the rectangle side to side
+    screen.fill((0,0,0), (0,y,S_WIDTH,B_HEIGHT))
+    if x < 0-width+2*B_WIDTH:
+        directon = 'r'
+    elif x > S_WIDTH-2*B_WIDTH:
+        directon = 'l'
+    if directon == 'r':
+        x+=B_WIDTH
+    elif directon == 'l':
+        x-=B_WIDTH
+       
+
+    pygame.draw.rect(screen, (255, 0, 0), (x,y,width,height))
+
+    pygame.display.update()
+
+pygame.quit()

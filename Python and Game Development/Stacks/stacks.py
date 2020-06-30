@@ -11,23 +11,22 @@ B_HEIGHT = S_HEIGHT/ROWS
 SPEED = 5
 # Initialize pygame
 pygame.init()
-
 # Set up the screen
 screen = pygame.display.set_mode((S_WIDTH,S_HEIGHT))
 pygame.display.set_caption("Stacks")
 
-# Starting stack should be as wide as the screen and as high as a block
+# Game variables
 x = 0
 y = S_HEIGHT-B_HEIGHT
 width = S_WIDTH
 height = B_HEIGHT
 speed = SPEED
 directon = 'l'
-prev=[]
+prev=[x,y,width,height]
 
 loop = True
 while loop:
-    pygame.time.delay(100 )
+    pygame.time.delay(100)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             loop = False
@@ -36,12 +35,18 @@ while loop:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_SPACE]:
         prev = [x,y,width,height]
+        if x < 0:
+            width = width + x
+            x = 0
+        elif x+width > S_WIDTH:
+            width = S_WIDTH - x     
         if y-B_HEIGHT!=B_HEIGHT:
             y -= B_HEIGHT
         else:
             screen.fill((0,0,0))
             pygame.draw.rect(screen, (255,0,0), (prev[0], S_HEIGHT-B_HEIGHT, prev[2], prev[3]))
             y = S_HEIGHT - 2*B_HEIGHT
+        
     
     
     # Move the rectangle side to side

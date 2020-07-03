@@ -18,17 +18,11 @@ screen = pygame.display.set_mode((S_WIDTH,S_HEIGHT))
 pygame.display.set_caption("Stacks")
 
 # Game variables
-<<<<<<< HEAD
 left = 0
-=======
-x = 0
-y = S_HEIGHT-B_HEIGHT
->>>>>>> ee1c20d8532b817d7600135b4703557893c29906
 width = S_WIDTH
 right = left + S_WIDTH
 y = S_HEIGHT-B_HEIGHT
 directon = 'l'
-<<<<<<< HEAD
 prev_left = left
 prev_right = right
 prev_width = width
@@ -40,13 +34,6 @@ color = COLORS[0]
 loop = True
 while loop:
     pygame.time.delay(speed)
-=======
-prev=[x,y,width,height]
-
-loop = True
-while loop:
-    pygame.time.delay(100)
->>>>>>> ee1c20d8532b817d7600135b4703557893c29906
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             loop = False
@@ -60,7 +47,6 @@ while loop:
     # Handle space keypress:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_SPACE]:
-<<<<<<< HEAD
         # If we miss the stack, the game is over
         if right <= prev_left or left >= prev_right:
             pygame.time.delay(1000)
@@ -101,22 +87,6 @@ while loop:
                 pygame.draw.rect(screen, color, (left, S_HEIGHT-B_HEIGHT, prev_width, B_HEIGHT))
                 y = S_HEIGHT - 2*B_HEIGHT
                 speed = int(speed*0.9)
-=======
-        prev = [x,y,width,height]
-        if x < 0:
-            width = width + x
-            x = 0
-        elif x+width > S_WIDTH:
-            width = S_WIDTH - x     
-        if y-B_HEIGHT!=B_HEIGHT:
-            y -= B_HEIGHT
-        else:
-            screen.fill((0,0,0))
-            pygame.draw.rect(screen, (255,0,0), (prev[0], S_HEIGHT-B_HEIGHT, prev[2], prev[3]))
-            y = S_HEIGHT - 2*B_HEIGHT
-        
-    
->>>>>>> ee1c20d8532b817d7600135b4703557893c29906
     
     # Move the rectangle side to side
     screen.fill((0,0,0), (0,y,S_WIDTH,B_HEIGHT))

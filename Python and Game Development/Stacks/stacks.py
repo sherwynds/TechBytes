@@ -86,7 +86,7 @@ while loop:
                 screen.fill((0,0,0))
                 pygame.draw.rect(screen, color, (left, S_HEIGHT-B_HEIGHT, prev_width, B_HEIGHT))
                 y = S_HEIGHT - 2*B_HEIGHT
-                speed = int(speed*0.9)
+                speed = int(speed*0.95)
     
     # Move the rectangle side to side
     screen.fill((0,0,0), (0,y,S_WIDTH,B_HEIGHT))

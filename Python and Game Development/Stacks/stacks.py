@@ -9,7 +9,10 @@ ROWS = 20
 B_WIDTH = S_WIDTH/COLS
 B_HEIGHT = S_HEIGHT/ROWS
 SPEED = 100
-COLORS = [(201,44,73), (216,201,155), (216,151,60), (206,113,59), (72,115,132), (15,113,115), (29,47,111), (237,164,189), (44,110,73)]
+# Alternate Color Schemes
+# COLORS = [(201,44,73), (216,201,155), (216,151,60), (206,113,59), (72,115,132), (15,113,115), (29,47,111), (237,164,189), (44,110,73)]
+# COLORS = [(250,223,117), (118,190,208), (244,134,104), (103,244,218), (234,93,97), (133,186,120), (200,86,147), (173,98,248), (164,83,61)]
+COLORS = [(213,62,79),(244,109,67),(253,174,97),(254,224,139),(255,255,191),(230,245,152),(171,221,164),(102,194,165),(50,136,189),(102,194,165),(171,221,164),(230,245,152),(255,255,191),(254,224,139),(253,174,97),(244,109,67)]
 
 # Initialize pygame
 pygame.init()
@@ -21,11 +24,11 @@ pygame.display.set_caption("Stacks")
 left = 0
 width = S_WIDTH
 right = left + S_WIDTH
-y = S_HEIGHT-B_HEIGHT
-directon = 'l'
 prev_left = left
 prev_right = right
 prev_width = width
+y = S_HEIGHT-B_HEIGHT
+directon = 'l'
 score = 0
 max_score = 0
 speed = SPEED
@@ -55,12 +58,13 @@ while loop:
             left = 0
             width = S_WIDTH
             right = left + S_WIDTH
-            direction = 'l'
             prev_left = left
             prev_right = right
             prev_width = width
             y = S_HEIGHT-B_HEIGHT
+            direction = 'l'
             speed = SPEED
+            color = COLORS[0]
         # Otherwise
         else:
             # Cut the block off if it misses the edge of the stack
@@ -78,15 +82,16 @@ while loop:
             # Draw the placed rectangle to the screen
             screen.fill((0,0,0), (0,y,S_WIDTH,B_HEIGHT))
             pygame.draw.rect(screen, color, (left,y,width,B_HEIGHT))
-            color = COLORS[score%9]
             # Move the rectangular block up, and reset the screen if it gets too high
             if y-B_HEIGHT!=B_HEIGHT:
                 y -= B_HEIGHT
+                color = COLORS[score%16]
             else:
                 screen.fill((0,0,0))
                 pygame.draw.rect(screen, color, (left, S_HEIGHT-B_HEIGHT, prev_width, B_HEIGHT))
+                color = COLORS[score%16]
                 y = S_HEIGHT - 2*B_HEIGHT
-                speed = int(speed*0.95)
+                speed = int(speed*0.97)
     
     # Move the rectangle side to side
     screen.fill((0,0,0), (0,y,S_WIDTH,B_HEIGHT))
@@ -100,8 +105,8 @@ while loop:
     elif directon == 'l':
         left-=B_WIDTH
         right-=B_WIDTH
-
     pygame.draw.rect(screen, color, (left,y,width,B_HEIGHT))
+    
     pygame.display.update()
 
 pygame.quit()

@@ -106,7 +106,7 @@ while loop:
         left-=B_WIDTH
         right-=B_WIDTH
     pygame.draw.rect(screen, color, (left,y,width,B_HEIGHT))
-    
+
     pygame.display.update()
 
 pygame.quit()

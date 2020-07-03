@@ -2,13 +2,13 @@
 import pygame
 
 # Game constants
-S_WIDTH = 800               # Screen width and height
+S_WIDTH = 800
 S_HEIGHT = 800
-COLS = 10                   # Number of columns and rows
+COLS = 10
 ROWS = 20
-B_WIDTH = S_WIDTH/COLS      # Block width and height
+B_WIDTH = S_WIDTH/COLS
 B_HEIGHT = S_HEIGHT/ROWS
-SPEED = 100                 # Initial speed
+SPEED = 100
 COLORS = [(213,62,79),(244,109,67),(253,174,97),(254,224,139),(255,255,191),(230,245,152),(171,221,164),(102,194,165),(50,136,189),(102,194,165),(171,221,164),(230,245,152),(255,255,191),(254,224,139),(253,174,97),(244,109,67)]
 
 # Initialize pygame
